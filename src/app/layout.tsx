@@ -3,18 +3,9 @@ import ReduxProvider from './provider';
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SidebarNavbar from "./component/Navbar";
 // import SidebarNavbar from './components/Navbar';
 
-function Layout() {
-  return (
-    <>
-      <SidebarNavbar />
-      {/* rest of page */}
-    </>
-  );
-}
-// const currentTheme = useSelector((state: RootState) => state.theme.current);
+
 
 
 import Footer from "./component/Footer";

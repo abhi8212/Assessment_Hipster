@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import company from '/images/company.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 import { FaInstagram, FaTwitter, FaFacebook, FaSkype } from 'react-icons/fa';

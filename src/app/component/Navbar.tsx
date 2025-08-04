@@ -1,9 +1,10 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import Link from 'next/link';
 import Image from 'next/image';
-import company from '/images/company.png';
+import type { ThemeType } from '@/redux/slices/themeSlice'; // Adjust the import path
+
 
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,15 +20,22 @@ const Navbar = () => {
   const dispatch = useDispatch<AppDispatch>();
   const currentTheme = useSelector((state: RootState) => state.theme.current);
 
-  const themes = [
-    { id: 'light', label: 'Light' },
-    { id: 'dark', label: 'Dark' },
-    { id: 'solarized', label: 'Solarized' },
-  ];
+  // const themes = [
+  //   { id: 'light', label: 'Light' },
+  //   { id: 'dark', label: 'Dark' },
+  //   { id: 'solarized', label: 'Solarized' },
+  // ];
 
 
-    const handleThemeChange = (themeId: string) => {
-    dispatch(setTheme(themeId as any));
+  
+const themes: { id: ThemeType; label: string }[] = [
+  { id: 'light', label: 'Light' },
+  { id: 'dark', label: 'Dark' },
+  { id: 'solarized', label: 'Solarized' },
+];
+
+    const handleThemeChange = (themeId: ThemeType) => {
+    dispatch(setTheme(themeId));
     setIsDropdownOpen(false);
   };
 
