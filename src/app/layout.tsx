@@ -1,6 +1,27 @@
 import type { Metadata } from "next";
+import ReduxProvider from './provider';
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SidebarNavbar from "./component/Navbar";
+// import SidebarNavbar from './components/Navbar';
+
+function Layout() {
+  return (
+    <>
+      <SidebarNavbar />
+      {/* rest of page */}
+    </>
+  );
+}
+// const currentTheme = useSelector((state: RootState) => state.theme.current);
+
+
+import Footer from "./component/Footer";
+import ThemeChange from "./component/ThemeChange";
+import Navbar from "./component/Navbar";
+// import { useSelector } from "react-redux";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +48,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ReduxProvider>
+        <ThemeChange>
+           <Navbar />
+          {children}
+          <Footer />
+        </ThemeChange>
+      </ReduxProvider>
       </body>
     </html>
   );
