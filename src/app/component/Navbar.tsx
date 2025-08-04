@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import Link from 'next/link';
 import Image from 'next/image';
-import type { ThemeType } from '@/redux/slices/themeSlice'; // Adjust the import path
+import type { ThemeType } from '@/redux/slices/themeSlice';
 
 
 
